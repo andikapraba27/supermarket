@@ -15,6 +15,10 @@ Super market ini membutuhkan suatu sistem kasir. Pada sistem ini customer dapat 
 - Membuat fungsi reset_transaction untuk menghapus seluruh transaksi yang telah dilakukan
 - Membuat fungsi check_order untuk melihat ringkasan dari transaksi yang telah dimasukkan
 - Membuat fungsi total_price untuk menghitung berapa harga total yang harus dibayarkan, beserta diskon yang didapatkan.
+  - apabila total harga > 500,000, maka mendapatkan diskon 10%
+  - apabila total_harga antara 300,000 dan 500,000, maka mendapatkan diskon 8%
+  - apabila total_harga antara 200,000 dan 300,000, maka mendapatkan diskon 5%
+  - apabila total_harga di bawah 200,000, maka tidak mendapatkan diskon.
 
 Fungsi check_order menggunakan module yang harus ditambahkan pada awal pembentukan file.py, yaitu:
 - tabulate \
@@ -62,13 +66,18 @@ c      | Update harga item
 Pada project ini, terdapat 2 file yang dibuat, yaitu transaction.py dan main.py. transaction.py merupakan file python yang berisi modul class Transaction yang berisi syntax-syntax yang digunakan dalam memproses transaksi kustomer. Sedangkan file main.py berisi syntax-syntax yang berkaitan dengan menu transaksi yang bisa dilakukan oleh kustomer, dengan memanfaatkan perintah-perintah yang ada pada modul transaction.py . Pertama, akan dijelaskan mengenai file transaction.py
 
 ### transaction.py
+- Awal
+![gambar](https://user-images.githubusercontent.com/31236670/231508538-0cf681ca-5f69-40c4-81f2-c94045941e3b.png)
+Import modul tabulate yang akan digunakan menampilkan ringkasan transaksi yang ada pada fungsi check_order. Class diberi nama Transaction. Inisialisasi variabel yang digunakan pada class Transaction, yang terdiri dari dict_barang, dictionary untuk menampung nama barang, jumlah dan item, dengan format, {nama_barang: [jumlah, harga]}. Variabel total_harga untuk menyimpan total harga yang dibayar, serta variabel diskon untuk menyimpan diskon yang diberikan berdasarkan kriteria pada requirement.
+
 - add_item
 ![gambar](https://user-images.githubusercontent.com/31236670/231505322-caffbbcd-3c69-4e32-a052-20833657f0ac.png)
 fungsi add_item digunakan untuk menambahkan item ke dalam kelas Transaction. Pertama, fungsi akan meminta input nama_barang, jumlah, dan harga. Lalu fungsi akan masuk ke bagian try-except. Pada bagian try akan dijalankan pemeriksaan sebagai berikut:
   * apakah inputan jumlah dan harga berupa numerik, apabila iya, maka data dimasukkan ke dalam dict_barang
   * apakah inputan jumlah & harga < 1, apabila iya, maka pesan input ulang akan ditampilkan, dan data tidak dimasukkan
   * apabila inputan jumlah & harga tidak bertipe numerik, maka akan menampilkan raise Exception.
- Pada bagian except, akan dicek 2 hal, yaitu apabila ValueError ketika inputan ha
+  
+ Pada bagian except, akan dicek 2 hal, yaitu apabila ValueError ketika inputan harga/jumlah bukan numerik, dan Exception lainnya yang berasal dari raise. 
 
 
 
