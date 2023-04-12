@@ -43,7 +43,7 @@ class Transaction:
                 raise Exception(f"Barang {nama_barang} tidak berhasil ditambahkan, cek kembali inputan anda, jumlah: {jumlah} & harga: {harga}")
             
         except ValueError:
-            print("Input harga bukan tipe data angka/integer")
+            print("Input harga/jumlah bukan tipe data angka/integer")
             
         except Exception as e:
             print(e)
