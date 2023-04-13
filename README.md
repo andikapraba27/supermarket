@@ -149,7 +149,7 @@ Kustomer akan memasukkan nilai-nilai sebagai berikut:
 * Nama item: Ayam Goreng, Qty: 2, Harga = 20000,
 * Nama item: Pasta Gigi, Qty:3; Harga = 15000
 
-Output:
+Output: <br />
 ![gambar](https://user-images.githubusercontent.com/31236670/231802538-0c95e691-cd43-4e58-a9a0-940b40bbebc0.png)
 ![gambar](https://user-images.githubusercontent.com/31236670/231802766-e8453504-7573-4c55-84e6-ef122c044715.png)
 ![gambar](https://user-images.githubusercontent.com/31236670/231802864-98f384d8-7a0a-4685-bf78-fe88ddb226b7.png)
@@ -157,26 +157,26 @@ Output:
 ### Test 2
 Kustomer ingin menghapus item Pasta Gigi. 
 
-Output:
+Output: <br />
 ![gambar](https://user-images.githubusercontent.com/31236670/231803155-d16757a0-4ed6-45e1-816e-431c04ede8ca.png)
 ![gambar](https://user-images.githubusercontent.com/31236670/231803256-fc67a8c4-0e3d-4c8e-a5dd-a95dfc515321.png)
 
 ### Test 3
 Kustomer ingin menghapus seluruh transaksi.
 
-output:
+output: <br />
 ![gambar](https://user-images.githubusercontent.com/31236670/231803639-d8b592b2-7e16-49e0-8db0-90495a9c1344.png)
 
 ### Test 4
 Kustomer selesai berbelanja, akan menghitung total belanja yang harus dibayarkan.
 
-Output:
+Output: <br />
 ![gambar](https://user-images.githubusercontent.com/31236670/231804469-9a2870fd-6c58-482b-92be-07fa83fb70cb.png)
 
 ### Test 5 (Bonus)
 Jika ingin mengganti nama, jumlah, dan harga. Masukkan saja jika mi instan ingin beli dengan jumlah 50 dengan harga barunya 5000. 
 
-Output:
+Output: <br />
 ![gambar](https://user-images.githubusercontent.com/31236670/231805332-9737aa2e-7846-4b33-a421-de86ef454b1f.png)
 ![gambar](https://user-images.githubusercontent.com/31236670/231805189-164b6cc0-ac26-4278-bf58-948fa1fa85d8.png)
 ![gambar](https://user-images.githubusercontent.com/31236670/231805485-6f2d85a2-ecd1-42c1-88c6-95ee05551cd6.png)
