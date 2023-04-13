@@ -142,7 +142,47 @@ Pada bagian ini, dicek jika inputan perintah ada di dalam list 2, 3, dan 4, dan 
 Jika variabel start_program pada awal file main.py bernilai "n", maka di print anda tidak melakukan transaksi. Lalu jika inputan selain y dan n, maka di print untuk hanya input menggunakan y dan n.
 
 
+## Hasil Test Case
+
+### Test 1
+Kustomer akan memasukkan nilai-nilai sebagai berikut:
+* Nama item: Ayam Goreng, Qty: 2, Harga = 20000,
+* Nama item: Pasta Gigi, Qty:3; Harga = 15000
+
+Output:
+![gambar](https://user-images.githubusercontent.com/31236670/231802538-0c95e691-cd43-4e58-a9a0-940b40bbebc0.png)
+![gambar](https://user-images.githubusercontent.com/31236670/231802766-e8453504-7573-4c55-84e6-ef122c044715.png)
+![gambar](https://user-images.githubusercontent.com/31236670/231802864-98f384d8-7a0a-4685-bf78-fe88ddb226b7.png)
+
+### Test 2
+Kustomer ingin menghapus item Pasta Gigi. 
+
+Output:
+![gambar](https://user-images.githubusercontent.com/31236670/231803155-d16757a0-4ed6-45e1-816e-431c04ede8ca.png)
+![gambar](https://user-images.githubusercontent.com/31236670/231803256-fc67a8c4-0e3d-4c8e-a5dd-a95dfc515321.png)
+
+### Test 3
+Kustomer ingin menghapus seluruh transaksi.
+
+output:
+![gambar](https://user-images.githubusercontent.com/31236670/231803639-d8b592b2-7e16-49e0-8db0-90495a9c1344.png)
+
+### Test 4
+Kustomer selesai berbelanja, akan menghitung total belanja yang harus dibayarkan.
+
+Output:
+![gambar](https://user-images.githubusercontent.com/31236670/231804469-9a2870fd-6c58-482b-92be-07fa83fb70cb.png)
+
+### Test 5 (Bonus)
+Jika ingin mengganti nama, jumlah, dan harga. Masukkan saja jika mi instan ingin beli dengan jumlah 50 dengan harga barunya 5000. 
+
+Output:
+![gambar](https://user-images.githubusercontent.com/31236670/231805332-9737aa2e-7846-4b33-a421-de86ef454b1f.png)
+![gambar](https://user-images.githubusercontent.com/31236670/231805189-164b6cc0-ac26-4278-bf58-948fa1fa85d8.png)
+![gambar](https://user-images.githubusercontent.com/31236670/231805485-6f2d85a2-ecd1-42c1-88c6-95ee05551cd6.png)
 
 
+## Conclusion/Future Work
+Pada project self service Supermarket ini digunakan class Transaction yang terdiri dari beberapa fungsi seperti add_item (menambahkan item), update_item_name (mengupdate nama item), update_item_qty (mengupdate jumlah item), update_item_price (mengupdate harga item), delete_item (menghapus 1 item), reset_transaction (menghapus seluruh item), check_order (cek ringkasan order), dan total_price (cek harga yang harus dibayarkan dan diskon yang didapat). Diimplementasikan juga block try-except untuk mempermudah user dalam memahami kesalahan apa yang dilakukan, sehingga kedepannya ketika menginput hal yang sama dapat menghindari kesalahan tersebut.
 
-
+Pada future work, program ini dapat digabungkan dengan sistem front end seperti webpage sebagai tempat input data-data tersebut, dan digabungkan dengan program ini yang nantinya akan dimasukkan ke dalam suatu database yang berisi ringkasan dari transaksi yang telah dimasukkan. Syntax-syntax input dapat dihilangkan. Daftar barang-barang dapat ditayangkan beserta harganya, sehingga user hanya menginput jumlah yang ingin dibeli. Daftar barang dan harga juga dapat disimpan dalam database, dan dapat dipanggil oleh sistem front end. 
