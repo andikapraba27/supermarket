@@ -79,6 +79,69 @@ fungsi add_item digunakan untuk menambahkan item ke dalam kelas Transaction. Per
   
  Pada bagian except, akan dicek 2 hal, yaitu apabila ValueError ketika inputan harga/jumlah bukan numerik, dan Exception lainnya yang berasal dari raise. 
 
+- update_item_name <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231784276-04486f5f-a897-4801-a575-fdd95b14171f.png)
+Pada fungsi update_item_name, pertama kali dilakukan perintah input untuk memasukkan nama barang yang ingin diganti, dan nama baru dari barang tersebut. Lalu dilanjutkan pada proses try-except. Pada bagian try, akan dicek apakah nama lama (nama barang yang ingin diganti) ada pada dictionary dict_barang, yang merupakan kumpulan dari transaksi yang telah diinput sebelumnya. Apabila nama barang ada, maka dimasukkan input dictionary baru menggunakan key dengan nama baru, dengan values yaitu jumlah dan harga sama dengan values dari key pada nama lama. Lalu dict dengan nama lama dihapus menggunakan syntax pop(). Pada bagian else, ketika nama barang tidak ada pada dictionary, maka raise akan mencetak pesan input ulang nama lama, yang nantinya akan diprint pada bagian except. 
+
+- update_item_qty <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231785746-0c91b3bb-9199-444c-b314-8daae4afc471.png)
+Pada fungsi update_item_qty, pertama kali dilakukan perintah input untuk memasukkan nama barang yang ingin diganti jumlahnya, dan jumlah baru dari barang tersebut. Lalu dilanjutkan pada proses try-except. Pada bagian try, akan dicek apakah nama barang ada pada dictionary dict_barang. Apabila nama barang ada, maka values qty/jumlah yang ada pada bagian values dictionary diganti dengan qty_baru, dengan cara mengganti nilai pada list pada index ke-0, sedangkan harga masih memakai nilai lama dari dict_barang sebelumnya dengan memanggil self.dict_barang[nama_barang][1]. Lalu dilakukan pemeriksaan pada else, yaitu apabila qty_baru yang diinput nilainya < 1, sehingga kustomer harus input ulang. Pada bagian else selanjutnya, ketika nama barang tidak ada pada dictionary, maka raise akan mencetak pesan input ulang nama lama, yang nantinya akan diprint pada bagian except. Except lainnya yaitu ValueError di print ketika inputan pada qty_baru tidak bertipe numerik. 
+
+- update_item_price <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231787171-9570ac2f-18f5-4d0a-9d91-1711eeb4e242.png)
+Pada fungsi update_item_price, pertama kali dilakukan perintah input untuk memasukkan nama barang yang ingin diganti harganya, dan harga baru dari barang tersebut. Lalu dilanjutkan pada proses try-except. Pada bagian try, akan dicek apakah nama barang ada pada dictionary dict_barang. Apabila nama barang ada, maka values harga yang ada pada bagian values dictionary diganti dengan price_baru, dengan cara mengganti nilai pada list pada index ke-1, sedangkan qty/jumlah masih memakai nilai lama dari dict_barang sebelumnya dengan memanggil self.dict_barang[nama_barang][0]. Lalu dilakukan pemeriksaan pada else, yaitu apabila price_baru yang diinput nilainya < 1, sehingga kustomer harus input ulang. Pada bagian else selanjutnya, ketika nama barang tidak ada pada dictionary, maka raise akan mencetak pesan input ulang nama lama, yang nantinya akan diprint pada bagian except. Except lainnya yaitu ValueError di print ketika inputan pada qty_baru tidak bertipe numerik. 
+
+- delete_item <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231787833-dcc773c2-5407-41f2-ac59-f42dcff0c153.png)
+Pada fungsi delete_item, dilakukan input nama barang yang ingin dihapus. Lalu pada bagian try, dicek apakah nama barang ada pada dict_barang. Apabila ada, maka barang tersebut dihapus menggunakan fungsi pop() yang terikat pada tipe data dictionary. Jika nama barang tidak ada, maka except akan menampilkan pesan dari Exception yang ada pada Raise. 
+
+- reset_transaction <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231789059-3cd2ad72-1002-46c3-aceb-a4d63643008e.png)
+Pada fungsi reset_transaction, digunakan untuk menghapus seluruh item. Hal ini dilakukan dengan menimpa dict_barang dengan dictionary kosong, yaitu dict(). Lalu diprint pesan bahwa seluruh transaksi dihapus.
+
+- check_order <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231789516-fca31ddd-ee80-4ed1-811d-1ee0aefd9e6c.png)
+Pada fungsi check_order, digunakan untuk menampilkan seluruh item yang telah diinput ke tabel. Pertama pada block try, akan dicek apakah dict_barang ada isinya atau tidak. Jika ada, maka pertama kita akan menginisialiasi header tabel, yang terdiri dari No, Nama item, jumlah item, harga/item, dan total harga. Lalu inisialisasi list table kosong, yang nantinya digunakan untuk menampung barang-barang yang ada di dict_barang.
+
+![gambar](https://user-images.githubusercontent.com/31236670/231790349-4db1e959-3a58-41aa-838a-045aea5d7f5a.png)
+Lalu dilakukan inisialisasi i = 1, yang akan digunakan untuk penomoran tabel pada kolom "No". Selanjutnya dilakukan proses looping for, dengan menggunakan nilai key pada dict_barang. Digunakan variabel dummy bernama insert_row yang didalmnya berupa list [], yang terdiri dari No yaitu variabel i, nama barang menggunakan key, jumlah barang menggunakan values dict_barang dengan index ke-0, harga barang dengan index ke-1, lalu total harga dengan mengalikan jumlah barang dan harga. variabel i dilakukan increment, untuk proses selanjutnya. Insert row dimasukkan ke dalam list table kosong sebelumnya, sehingga list table ini akan berisi kumpulan list dari dict_barang yang sudah disusun sesuai dengan header table yang telah didefinisikan sebelumnya. Table ini dimasukkan ke dalam fungsi tabulate, dengan headers sebelumnya, dan di print. Hasil yang didapat nanti berupa tabel yang terdiri dari keseluruhan transaksi yang digunakan. Pada bagian else, jika panjang dict_barang masih kosong, pesan data belanja kosong akan ditayangkan. 
+
+- total_price <br />
+![gambar](https://user-images.githubusercontent.com/31236670/231792989-2d355f58-ff59-4687-a7b5-f6c85350ad50.png)
+Pada fungsi total_price, akan dicek pada block try dan if jika dict_barang kosong atau tidak. Jika tidak, maka akan ditampilkan tabel ringkasan order menggunakan fungsi check_order. Inisialisasi total_harga dengan nilai 0, lalu masuk ke proses for looping pada key dan item dari dict_barang. Pada variable total_harga dilakukan increment dengan menambah perkalian antara item[0] (jumlah) dengan item[1] (harga).
+
+![gambar](https://user-images.githubusercontent.com/31236670/231793791-6235d897-fb21-4311-bf5c-a501cdba23e5.png)
+selanjutnya akan dicek diskon berapa yang akan didapat. Jika total_harga lebih dari 500,000 maka diskon yang didapat 10%. Jika total_harga lebih dari 300,000 maka diskon yang didapat 8%. Jika total_harga lebih dari 200,000 maka diskon yang didapat 5%, dan jika total harga di bawah 200,000 maka tidak mendapatkan diskon. Nilai total_harga, diskon yang didapat, serta total yang harus dibayarkan diprint, dan optional, bisa ditambahkan pesan untuk transfer pada rekening tertentu. Harga yang harus dibayar dihitung menggunakan fungsi total_harga dikalikan dengan nilai 1 dikurangi diskon yang dibagi 100. Apabila panjang dict_barang 0, maka pesan data belanja kosong akan di print.
+
+
+### main.py
+Pada program main.py, berisi perintah-perintah yang berkaitan dengan menu yang dapat dipilih.
+
+![gambar](https://user-images.githubusercontent.com/31236670/231795530-4326af80-b703-4e15-8967-a16a1bf58657.png)
+Pertama, import file transaction.py dengan fungsi from transaction import Transaction. Membuat menu utama dalam transaksi, dengan print pesan welcome, dan syntax input yang dimasukkan ke dalam variable start_program. apabila kustomer input string y, maka program akan terus berjalan.
+
+![gambar](https://user-images.githubusercontent.com/31236670/231796433-3530ee78-1b7e-4405-9f28-27b80f91f92a.png)
+Ketika kustomer input string "y", maka akan masuk block if. Di dalamnya, diinisialisasi variabel end_program = false. Variabel ini akan digunakan untuk menjalankan loop While. Selanjutnya dibuat suatu kelas, bernama trans yang menggunakan class Transaction(). Lalu masuk ke dalam loop While menggunakan variabel end_program. While ini akan terus dijalankan hingga nilai end_program berubah menjadi True. Di dalam while di print list transaksi yang dapat dilakukan, terdiri dari 7 perintah dari tambahkan item hingga keluar. 
+
+![gambar](https://user-images.githubusercontent.com/31236670/231797368-bf5cfaba-d129-45e7-b779-8d09d4ba4649.png)
+Selanjutnya kustomer akan diminta untuk input angka dari transaksi yang ingin dilakukan dari nomor 1-7. Angka ini akan dimasukkan ke dalam variabel perintah. Jika perintah == 1, maka dipanggil fungsi add_item(). Jika perintah == 2, dan panjang dict_barang > 0, maka kustomer akan diperlihatkan 3 pilihan, yaitu apakah ingin mengupdate nama item, jumlah item, atau harga item. 
+
+![gambar](https://user-images.githubusercontent.com/31236670/231798063-2f949595-5ba7-4922-98c1-c2b49794e913.png)
+Kustomer akan diminta untuk menginput pilihan a/b/c yang dimasukkan ke variable perintah_update. Jika perintah_update == a, maka dipanggil fungsi update_item_name. Jika perintah_update == b, maka dipanggil fungsi update_item_qty. Jika perintah_update == c, maka dipanggil fungsi update_item_price. Jika perintah_update selain a/b/c, maka diprint perintah untuk memasukkan hanya a, b, dan c. 
+
+![gambar](https://user-images.githubusercontent.com/31236670/231798772-466ccd1c-c836-4f59-9758-ed96a491ea62.png)
+Jika perintah == 3 dan panjang dict_barang > 0, maka dipanggila fungsi delete_item. Jika perintah == 4, maka dipanggil fungsi reset_transaction. Jika perintah == 5, maka dipanggil fungsi check_order. Jika perintah == 6, maka dipanggil fungsi total_price. 
+
+![gambar](https://user-images.githubusercontent.com/31236670/231799401-317d98db-370d-4d52-b14b-7c58b78e0d41.png)
+Jika perintah == 7, maka pertama akan diminta input apakah anda ingin mengakhiri sesi? (y/n). Jika kustomer input string y, maka akan dipanggil fungsi total_price untuk menayangkan rangkuman transaksi. Lalu diprint terima kasih atas kunjungan anda, dan variabel end_program berubah nilainya menjadi True, sehingga program akan keluar dari loop while. Jika kustomer input selain y, maka loop while masih berjalan. 
+
+![gambar](https://user-images.githubusercontent.com/31236670/231800111-6bc859e8-bcfe-4cf3-a2c9-946563b33caa.png)
+Pada bagian ini, dicek jika inputan perintah ada di dalam list 2, 3, dan 4, dan panjang dari dict_barang == 0. Maka di print bahwa belum ada barang yang dimasukkan pada dict_barang. Terakhir, apabila inputan nomor tidak ada yang sesuai dari angka 1-7, maka print input sesuai dengan nomor perintah ditayangkan. 
+
+![gambar](https://user-images.githubusercontent.com/31236670/231800786-ecc05b0c-9f1d-4f74-bdeb-cfe8ba9a5372.png)
+Jika variabel start_program pada awal file main.py bernilai "n", maka di print anda tidak melakukan transaksi. Lalu jika inputan selain y dan n, maka di print untuk hanya input menggunakan y dan n.
+
+
 
 
 
