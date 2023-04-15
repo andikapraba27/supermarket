@@ -36,7 +36,7 @@ class Transaction:
                 self.dict_barang.update(input_dict_barang)
                 print(f"Barang {nama_barang} berhasil ditambahkan dengan jumlah: {jumlah}, dan harga: {harga}")
                 
-            elif int(jumlah) < 1 and int(harga) < 1: #untuk memeriksa apakah input jumlah & harga < 1
+            elif int(jumlah) < 1 or int(harga) < 1: #untuk memeriksa apakah input jumlah & harga < 1
                 print("Input jumlah dan harga < 1, input ulang")
                 
             else:
